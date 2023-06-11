@@ -38,6 +38,8 @@ class BookController extends Controller
      */
     public function show($book)
     {
+        
+
         $book = Book::with('category:id,name', 'authors:name', 'reviews.user:id,name')
             ->withAvg('reviews', 'rating')
             ->findOrFail($book);

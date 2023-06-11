@@ -18,39 +18,39 @@ class BooksTableSeeder extends Seeder
 
         $books = [
             [
-                'title' => 'The Great Gatsby',
-                'description' => 'A novel by F. Scott Fitzgerald',
-                'price' => 12.99,
+                'title' => 'The Lord of the Rings',
+                'description' => 'The Lord of the Rings is an epic fantasy novel by J.R.R. Tolkien. It follows the journey of Frodo Baggins and his companions as they seek to destroy the One Ring and defeat the Dark Lord Sauron.',
+                'price' => 19.99,
+                'category_id' => $categories->random()->id
+            ],
+            [
+                'title' => 'The Chronicles of Narnia',
+                'description' => 'The Chronicles of Narnia is a series of fantasy novels by C.S. Lewis. It tells the adventures of children who find a magical wardrobe that leads them to the mystical world of Narnia.',
+                'price' => 15.99,
                 'category_id' => $categories->random()->id
             ],
             [
                 'title' => 'To Kill a Mockingbird',
-                'description' => 'A novel by Harper Lee',
-                'price' => 10.99,
+                'description' => 'To Kill a Mockingbird is a novel by Harper Lee. It explores themes of racial injustice and the loss of innocence in the Deep South during the 1930s.',
+                'price' => 12.99,
                 'category_id' => $categories->random()->id
             ],
             [
-                'title' => '1984',
-                'description' => 'A dystopian novel by George Orwell',
+                'title' => 'The Alchemist',
+                'description' => 'The Alchemist is a novel by Paulo Coelho. It follows the journey of a young shepherd named Santiago as he seeks his personal legend and learns valuable life lessons along the way.',
                 'price' => 9.99,
                 'category_id' => $categories->random()->id
             ],
             [
-                'title' => 'Pride and Prejudice',
-                'description' => 'A novel by Jane Austen',
-                'price' => 8.99,
+                'title' => 'The Great Gatsby',
+                'description' => 'The Great Gatsby is a novel written by F. Scott Fitzgerald. It is a story of the Jazz Age and the American Dream, set in the Roaring Twenties.',
+                'price' => 10.99,
                 'category_id' => $categories->random()->id
             ],
             [
-                'title' => 'The Hobbit',
-                'description' => 'A fantasy novel by J.R.R. Tolkien',
-                'price' => 14.99,
-                'category_id' => $categories->random()->id
-            ],
-            [
-                'title' => 'Harry Potter and the Philosopher\'s Stone',
-                'description' => 'A fantasy novel by J.K. Rowling',
-                'price' => 11.99,
+                'title' => 'To Kill a Mockingbird',
+                'description' => 'To Kill a Mockingbird is a novel by Harper Lee. It explores themes of racial injustice and the loss of innocence in the Deep South during the 1930s.',
+                'price' => 12.99,
                 'category_id' => $categories->random()->id
             ],
 

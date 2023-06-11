@@ -14,31 +14,16 @@ class AuthorBookTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $authorBookData = [
-            [
-                'author_id' => 1,
-                'book_id' => 1
-            ],
-            [
-                'author_id' => 2,
-                'book_id' => 1
-            ],
-            [
-                'author_id' => 2,
-                'book_id' => 2
-            ],
-            [
-                'author_id' => 3,
-                'book_id' => 3
-            ],
-            // Add more author-book relationships as needed
-        ];
+        $authors = Author::all();
+        $books = Book::all();
 
-        foreach ($authorBookData as $data) {
-            $author = Author::find($data['author_id']);
-            $book = Book::find($data['book_id']);
+        // create 10 author-book relationships
+        for ($i = 0; $i < 10; $i++) {
+            $author = $authors->random();
+            $book = $books->random();
 
-            if ($author && $book) {
+            // check if the author is already attached to the book
+            if (!$book->authors->contains($author)) {
                 $book->authors()->attach($author);
             }
         }
