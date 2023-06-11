@@ -53,3 +53,9 @@ php artisan db:seed
 ```
 php artisan serve
 ```
+
+### Step 8: Run the vite
+Run the vite server in the different terminal tab
+```
+npm run dev
+```
