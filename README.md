@@ -13,9 +13,9 @@ Follow these steps to set up the book store application:
 - MySQL or another compatible database
 
 ### Step 1: Clone the repository
-
-https://github.com/omkar3524/book-store.git
-
+```
+git clone https://github.com/omkar3524/book-store.git
+```
 ### Step 2: Install dependencies
 ```
 cd book-store
