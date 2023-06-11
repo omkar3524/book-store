@@ -18,33 +18,40 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-800">
-        @if (Route::has('login'))
-            <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10 w-full bg-gray-800 flex justify-end items-center">
-                @auth
-                    <a href="{{ url('/dashboard') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 mr-2">Dashboard</a>
-                    <!-- Authentication -->
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-
-                        <x-dropdown-link :href="route('logout')" class="text-white font-semibold hover:bg-gray-500"
-                            onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                            {{ __('Log Out') }}
-                        </x-dropdown-link>
-                    </form>
-                @else
-                    <a href="{{ route('login') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-                        in</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                            class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                    @endif
-                @endauth
+        <div class="flex justify-between">
+            <div class="shrink-0 flex items-center z-10">
+                <a href="{{ route('dashboard') }}">
+                    <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                </a>
             </div>
-        @endif
+            @if (Route::has('login'))
+                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10 w-full bg-gray-800 flex justify-end items-center">
+                    @auth
+                        <a href="{{ url('/dashboard') }}"
+                            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 mr-2">Dashboard</a>
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+    
+                            <x-dropdown-link :href="route('logout')" class="text-white font-semibold hover:bg-gray-500"
+                                onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}"
+                            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
+                            in</a>
+    
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}"
+                                class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+        </div>
 
         <!-- Page Heading -->
         {{-- @if (isset($header))

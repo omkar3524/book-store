@@ -17,7 +17,7 @@ use App\Http\Controllers\ReviewController;
 |
 */
 Route::redirect('/', '/books')->name('home');
-Route::resource('books', BookController::class);
+Route::resource('books', BookController::class)->only(['index', 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

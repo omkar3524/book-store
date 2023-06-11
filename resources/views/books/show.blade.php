@@ -1,8 +1,12 @@
 @extends('layouts.public')
 
 @section('content')
+    <x-alert-success></x-alert-success>
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
-        <h1 class="text-3xl font-bold mb-8 text-gray-100">Book Details</h1>
+        
+        <h1 class="text-3xl font-bold mb-8 text-gray-100">
+            <x-back-to-home></x-back-to-home>
+            Book Details</h1>
 
         <div class="max-w-2xl bg-white rounded shadow-md p-8">
             <div class="flex justify-between mb-4">
@@ -15,9 +19,9 @@
             {{-- Add authors here --}}
             <div class="flex mb-4 border-t">
                 <span class="text-gray-600 font-semibold mr-2">Authors:</span><br>
-                    @foreach ($book->authors as  $author)
-                        <span class="text-gray-700 mr-2">{{ $author->name }}{{ $loop->last ? '': ', '}}</span>
-                    @endforeach
+                @foreach ($book->authors as $author)
+                    <span class="text-gray-700 mr-2">{{ $author->name }}{{ $loop->last ? '' : ', ' }}</span>
+                @endforeach
             </div>
 
         </div>

@@ -16,14 +16,20 @@ class AuthorTableSeeder extends Seeder
         $authors = [
             [
                 'name' => 'F. Scott Fitzgerald',
+                'email' => 'scott@example.com'
             ],
             [
                 'name' => 'Harper Lee',
+                'email' => 'harper@example.com'
             ],
             [
                 'name' => 'George Orwell',
+                'email' => 'george@example.com'
             ],
-            // Add more authors as needed
+            [
+                'name' => 'J.K. Rowling',
+                'email' => 'rowling@example.com'
+            ],
         ];
 
         foreach ($authors as $author) {
